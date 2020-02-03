@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {Component } from 'react';
 
 
 
@@ -6,7 +6,7 @@ export default props => (
 	<>
 		<h1>List of Books I want to Read:</h1>
 		<ul>
-			{props.things.map(thing => <BookItem thing={thing} />)}
+			{props.things.map(thing => <BookItem thing={thing} onDelete={props.onDelete}/>)}
 		</ul>
 
 		<ToReadList onCreated={props.onCreated} />
@@ -15,7 +15,10 @@ export default props => (
 
 
 function BookItem(props) {
-	return <li>{props.things.name}</li>
+	return <li>
+		<p>{props.things.name}</p>
+		<button onClick={() => props.onDelete(props.thing)}> delete </button>
+		</li>
 }
 
 
