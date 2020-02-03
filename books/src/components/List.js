@@ -1,4 +1,4 @@
-import React, {Component } from 'react';
+import React, { Component } from 'react';
 
 
 
@@ -25,7 +25,7 @@ function BookItem(props) {
 
 
 
-class ToReadList extends React.Component {
+class ToReadList extends Component {
 	constructor(props) {
 		super(props);
 		this.state = { value: '' };
